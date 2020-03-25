@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3508" height="2480" viewBox="0 0 3508 2480">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 33.838px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        opacity: 0.7;
+        fill: #1e6573;
+        font-family: Roboto;
+      }
+
+      .cls-2 {
+        font-size: 123.706px;
+      }
+
+      .cls-3 {
+        font-size: 42.077px;
+      }
+
+      .cls-4 {
+        font-size: 79.079px;
+      }
+    </style>
+  </defs>
+  <text id="F" class="cls-1" transform="translate(683.4 737.366) rotate(41.471) scale(4.433)">F</text>
+  <text id="J" class="cls-2" transform="translate(903.549 1940.139) rotate(45) scale(1.213)">J</text>
+  <text id="_" data-name="[" class="cls-2" transform="translate(2160.549 673.139) rotate(45) scale(1.213)">[</text>
+  <text id="E" class="cls-3" transform="matrix(2.833, -2.164, 2.164, 2.833, 1705.105, 1299.721)">E</text>
+  <text id="L" class="cls-2" transform="translate(2458.238 1000.02) rotate(-15) scale(1.213)">L</text>
+  <text id="D" class="cls-2" transform="translate(1631.199 1979.199) rotate(27.451) scale(1.213)">D</text>
+  <text id="I" class="cls-2" transform="translate(3059.271 1188.431) rotate(-30) scale(1.213)">I</text>
+  <text id="N" class="cls-2" transform="matrix(1.144, -0.401, 0.401, 1.144, 1581.954, 604.215)">N</text>
+  <text id="_2" data-name="=" class="cls-2" transform="matrix(1.144, -0.401, 0.401, 1.144, 1335.955, 1015.215)">=</text>
+  <text id="G" class="cls-2" transform="matrix(-1.213, 0, 0, -1.213, 3216.685, 1540.167)">G</text>
+  <text id=":" class="cls-2" transform="translate(2368.416 1792.794) rotate(45) scale(1.213)">:</text>
+  <text id="_3" data-name=";" class="cls-2" transform="translate(486.802 1346.68) scale(1.213)">;</text>
+  <text id="_4" data-name="{" class="cls-2" transform="translate(836.819 1448.962) rotate(30) scale(1.213)">{</text>
+  <text id="_copy" data-name="{ copy" class="cls-2" transform="translate(2553.817 1372.963) rotate(30) scale(1.213)">{</text>
+  <text id="_5" data-name="(" class="cls-4" transform="translate(232.476 991.643) rotate(-30) scale(1.897)">(</text>
+  <text id="_-" data-name="-" class="cls-2" transform="translate(2053.089 2220.58) scale(1.213)">-</text>
+  <text id="_6" data-name="+" class="cls-2" transform="translate(185.212 1788.983) scale(1.213)">+</text>
+</svg>

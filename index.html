@@ -1,73 +1,61 @@
 <!doctype html>
-<html lang="en">
+<html lang="dk">
 
 <head>
   <meta charset="utf-8">
   <title>Portfolio | Helle Flohr Fjelding</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Portfolio Multimediadesigner for Helle Flohr Fjelding">
+  <meta name="description" content="Portfolio for Multimediadesigner Helle Flohr Fjelding">
   <meta name="keywords" content="Portfolio Multimediadesigner Kompetencer 'Frontend Developer'">
   <meta name="author" content="Helle Flohr Fjelding">
-  <link href="css/reset.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="shortcut icon" type="image/png" href="img/favicon.svg" />
+  <!-- <link rel="stylesheet" href="star.css"> -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"> <!-- css for AOS fade animation -->
+  <link rel="stylesheet" href="main.css">
+  <!-- favicon.io start-->
+  <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <!-- favicon.io end -->
 </head>
 
-<body onhashchange="pageChange()">
+<body class="app" onhashchange="pageChange()">
+  <!-- <div id='stars'></div>
+  <div id='stars2'></div>
+  <div id='stars3'></div> -->
   <!-- tabbar navigation -->
   <nav class="tabbar">
-    <a href="#home">Hjem</a>
     <a href="#aboutMe">Om mig</a>
     <a href="#skills">Kompetencer</a>
     <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Kontakt</a>
   </nav>
 
-  <!-- pages -->
-  <!-- introduction page -->
-  <section id="introduction" class="page">
-    <section id="introduction_container"></section>
-  </section>
 
-  <!-- home page -->
-  <section id="home" class="page">
-    <header class="topbar">
-      <h2>Hjem</h2>
-    </header>
-    <section id="home_container"></section>
-  </section>
 
-  <!-- about page -->
-  <section id="aboutMe" class="page">
-    <header class="topbar">
-      <h2>Om mig</h2>
-    </header>
-    <section id="aboutMe_container"></section>
-  </section>
-
-  <!-- clients page -->
-  <section id="skills" class="page">
-    <header class="topbar">
-      <h2>Kompetencer</h2>
-    </header>
-    <section id="skills_container" class="grid-container">
-    </section>
-
-  </section>
-
-  <!-- contact page -->
-  <section id="portfolio" class="page">
-    <header class="topbar">
-      <h2>Portfolio</h2>
-    </header>
-    <section id="portfolio_container" class="grid-container">
-
-    </section>
-
-    <!-- SPA functionality  -->
-    <!-- <script src="js/spa.js"></script> -->
-    <!-- main js file -->
-    <script src="js/main.js" type="module"></script>
-
-</body>
+  <!-- Pages -->
+  <section id="content"></section>
+  <!-- script for AOS fade animation  -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+    });
+  </script>
+  <!-- main js file -->
+  <script src="main.js" type="module"></script>
 
 </html>

@@ -1,0 +1,736 @@
+/* ---------- root variables ---------- */
+:root {
+  --background: #201F1F;
+  --green: rgb(21, 68, 76);
+  --light-green: rgb(172, 198, 201);
+  --medium-green: #537074;
+  --light-grey: #f8f8fa;
+  --text-color-light: #f1f1f1;
+  --text-color-medium: #333;
+  --text-color-dark: #000;
+  --gradient: radial-gradient(circle, rgb(52, 124, 138), rgb(21, 68, 76));
+  --gradient45: linear-gradient(rgb(172, 198, 201), rgb(21, 68, 76));
+  --border_radius: 25px;
+}
+
+/* ---------- Font ---------- */
+@font-face {
+  font-family: 'raleway';
+  src: url('raleway/Raleway-Regular.ttf');
+}
+
+/* ---------- general styling ---------- */
+html {
+  color: var(--text-color-light);
+  font-family: 'raleway', Helvetica, Arial, sans-serif;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  font-weight: 200;
+
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.5em;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-align: center;
+  margin: 3%;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 00;
+  line-height: 1.5em;
+  text-align: center;
+  margin: 2%;
+  margin-bottom: 3%;
+}
+
+h3 {
+  font-weight: bold;
+  margin-top: 1.5em;
+  margin-bottom: .5em;
+}
+
+a {
+  color: var(--text-color-light);
+}
+
+b {
+  font-weight: bold;
+}
+
+br {
+  margin-bottom: 1.5em;
+}
+
+.noDecoration {
+  text-decoration: none;
+  font-weight: 900;
+}
+
+p {
+  line-height: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+ul {
+  padding-top: 1em;
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
+.itallic {
+  font-style: italic;
+  display: inline;
+  font-weight: normal;
+}
+
+/* ---------- topbar styling ---------- */
+.topbar {
+  background-color: var(--green);
+  background-image: url(img/background3.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--text-color-light);
+  height: 55px;
+  text-transform: uppercase;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.topbar h2 {
+  margin: 0;
+  padding-top: 1vh;
+  font-weight: 300;
+}
+
+/* ---------- tabbar styling ---------- */
+.tabbar {
+  background-color: var(--green);
+  background-image: url(img/background3.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+/* Style the links inside the navigation bar */
+.tabbar a {
+  display: inline-block;
+  color: var(--text-color-light);
+  text-align: center;
+  padding: 20px 10px;
+  text-decoration: none;
+  font-size: 0.6em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Change the color of links on hover */
+.tabbar a:hover {
+  background-color: var(--light-grey);
+  color: var(--text-color-dark);
+  font-weight: 900;
+}
+
+/* Add a color to the active/current link */
+.tabbar a.active {
+  background-color: var(--light-green);
+  color: var(--text-color-dark);
+  font-weight: 900;
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.4s, opacity 0.4s linear;
+}
+
+/* ---------- page styling ---------- */
+.page {
+  display: none;
+  /*min heigh is screen heigh minus height of tab and top bar */
+  min-height: calc(100vh - 110px);
+  background: var(--gradient);
+  animation: fadeIn 0.4s;
+  /* padding equals height of tabbar and topbar */
+  padding: 55px 0;
+}
+
+#content {
+  z-index: 9999;
+}
+
+/* ---------- introduction styling ---------- */
+#introduction {
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+}
+
+#introduction .tabbar {
+  display: none;
+}
+
+#introduction_article {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  height: 100vh;
+  justify-content: space-between;
+  letter-spacing: 2px;
+  align-items: center;
+  background-color: var(--gradient);
+  box-sizing: border-box;
+}
+
+.skipBtn {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  border-radius: var(--border_radius);
+  border: var(--medium-green);
+  background: none;
+  color: var(--light-green);
+  font-weight: bold;
+  letter-spacing: .1em;
+  width: auto;
+  margin: 1.5em auto 1em;
+  height: auto;
+  font-size: 3vw;
+  padding: .5em 1em;
+  cursor: pointer;
+}
+
+#introH1 {
+  position: relative;
+  white-space: nowrap;
+  text-transform: uppercase;
+  max-width: 50vw;
+  text-align: center;
+  font-size: 6vw;
+  font-weight: 900;
+  pointer-events: none;
+  user-select: none;
+}
+
+#introH1 span {
+  position: absolute;
+  left: 7vw;
+  color: var(--text-color-light);
+  opacity: 0;
+  animation: scale 2s cubic-bezier(0.5, -0.75, 0.7, 0.6) forwards;
+}
+
+#introH1 span:nth-child(2) {
+  animation-delay: 2s;
+}
+
+#introH1 span:nth-child(3) {
+  animation-delay: 4s;
+}
+
+#introH1 span:nth-child(4) {
+  animation-delay: 6s;
+}
+
+#introH1 span:nth-child(5) {
+  animation-delay: 8s;
+}
+
+#introH1 span:last-child {
+  animation: fade 2s linear 8s forwards;
+}
+
+.st0 {
+  fill: none;
+}
+
+.st1 {
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}
+
+.introduction {
+  position: absolute;
+  top: 55%;
+  right: 0;
+  width: 80%;
+  max-width: 45vw;
+  height: 100vh;
+  opacity: 0.6;
+  stroke-width: 2;
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  animation: dash 8s cubic-bezier(0.51, 0.92, 0.24, 1.15) 6s forwards;
+}
+
+
+
+/* ---------- contact styling ---------- */
+#contact_article {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 2% 3%;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#contact .col-2 {
+  text-align: left;
+}
+
+.svg {
+  fill: var(--green);
+}
+
+/* ---------- about me styling ---------- */
+#aboutMe {
+  text-align: justify;
+}
+
+.aboutMe_article {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2% 3%;
+}
+
+#helleAbout,
+#helleContact {
+  width: 90%;
+}
+
+#myCode {
+  width: 100%;
+  text-align: center;
+  margin: 1% 0;
+}
+
+#citat {
+  width: 50%;
+  display: block;
+  text-align: center;
+  margin: 1% auto;
+}
+
+/* ---------- portfolio styling ---------- */
+
+#portfolio_article {
+  max-width: 650px;
+  margin: 0 auto;
+  display: block;
+  padding: 2% 3%;
+  text-align: justify;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2%;
+}
+
+.cell {
+  display: block;
+  color: white;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+  border: .5px solid var(--border_radius);
+  margin: 1%;
+  transition: all .2s ease-in-out;
+}
+
+
+/* Text over image revealing on hover */
+.image {
+  opacity: 1;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.cell:hover {
+  transform: scale(1.05);
+  transition: .5s ease-in-out;
+}
+
+.middle {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.cell:hover .image {
+  opacity: 0.3;
+}
+
+.cell:hover .middle {
+  opacity: 1;
+}
+
+
+/* Modal*/
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow-y: hidden;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: var(--light-grey);
+  color: var(--text-color-dark);
+  margin: auto;
+  border: 1px solid var(--light-green);
+  width: 80%;
+  max-width: 1200px;
+  height: auto;
+  max-height: 80%;
+  line-height: 1.5em;
+  margin-bottom: 1%;
+  text-align: left;
+  overflow: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: var(--light-green);
+  color: white;
+}
+
+.modal-body {
+  padding: 2px 16px;
+}
+
+.col-2 {
+  width: 100%;
+  text-align: justify;
+}
+
+.col-2-img {
+  display: block;
+  margin: auto;
+  padding: 5%;
+  width: 70%;
+}
+
+.col-2-img-small {
+  display: block;
+  margin: auto;
+  padding: 5%;
+  width: 30%;
+}
+
+.link-dark {
+  color: var(--text-color-dark);
+}
+
+.half {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.half img {
+  width: 48%;
+  padding: 0;
+
+}
+
+.modal-footer {
+  height: 50px;
+  background-color: var(--light-green);
+  color: white;
+}
+
+#onlineMagazine .modal-body {
+  background-image: url(img/header.png);
+  background-size: cover;
+}
+
+/* ---------- Skills ---------- */
+#skills_article {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: block;
+  line-height: 1.5em;
+  padding: 2% 3%;
+}
+
+#skills_article_div {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.col-3 {
+  width: 100%;
+  text-align: justify;
+}
+
+.svg_logo_div {
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+}
+
+.svg_logo {
+  width: 50px;
+  height: 50px;
+  margin: 1% 2%;
+}
+
+/* ---------- Keyframes ---------- */
+
+@keyframes scale {
+  0% {
+    opacity: 0.2;
+    transform: scale(10);
+    filter: blur(10px);
+  }
+
+  50%,
+  85% {
+    opacity: 0.8;
+    transform: scale(1);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotateX(90deg);
+    filter: blur(10px);
+
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes dash {
+  90% {
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dasharray: 3000;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Add Animation to Modal */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+
+/* fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+form {
+  margin: auto;
+}
+
+
+/* ---------- Media Query ---------- */
+@media only screen and (min-width:600px) {
+  .introduction {
+    top: 58%;
+  }
+
+  .skipBtn {
+    font-size: 1em;
+  }
+
+  .tabbar a {
+    font-size: 0.8em;
+    padding: 20px 16px;
+  }
+
+  .cell {
+    width: 48%;
+    margin: .5 auto;
+  }
+
+  .modal-body {
+    padding: 2px 16px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .col-2 {
+    width: 47%;
+    padding: 1.5%;
+  }
+
+  .col-2-img {
+    display: block;
+    margin: auto;
+    width: 70%;
+  }
+
+  .col-3 {
+    width: 42%;
+    margin: 1.5%;
+    margin-top: 5%;
+    padding: 1.5%;
+  }
+
+  .svg_logo {
+    width: 40px;
+    height: 40px;
+    margin: 1% 2%;
+  }
+
+  .letters {
+    margin-top: -1%;
+    background-image: url(img/background4.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #contact,
+  #skills {
+    background-image: url(img/background4.svg), var(--gradient);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@media only screen and (min-width:800px) {
+  .container {
+    width: 800px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width:1000px) {
+  .introduction {
+    top: 60%;
+  }
+
+  .col-3 {
+    width: 27%;
+  }
+}
+
+@media only screen and (min-width:1200px) {
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+  .cell {
+    width: 31%;
+    margin: 1 auto;
+  }
+}
+
+@media only screen and (min-width:1350px) {
+  .introduction {
+    top: 63%;
+  }
+}

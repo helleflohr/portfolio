@@ -1,16 +1,20 @@
+// 
+import _redirectService from "./../services/redirectService.js";
 export default class Introduction {
-    constructor() {
-        this.introduction = "";
-    }
+	constructor() {
+		this.template();
+	}
 
-    appendIntroduction() {
-        document.getElementById('introduction_container').innerHTML = /*html*/ `
-    
-        <article id="introduction_article">
-        <button class="skipBtn">Spring over</button>
-    <h1 id="introH1"><span>Portfolio</span><span>Kreativ</span><span>Frontend
-            Developer</span><span>Perfektionist</span><span>Multimediedesigner</span>
-    </h1>
+	// Template for the content on the homepage
+	template() {
+		document.getElementById('content').innerHTML += /*html*/ `
+		<section id="introduction" class="page">
+
+		  <!-- Unique content on the page-->
+		  <article id="introduction_article">
+		<button class="skipBtn" onclick="navigateTo('aboutMe')">Spring over</button>
+		
+    <h1 id="introH1"><span>Portfolio</span><span>Kreativ</span><span>Perfektionist</span><span>Frontend Developer</span><span>Multimediedesigner</span></h1>
 
     <div class="introduction">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -120,6 +124,11 @@ export default class Introduction {
         </svg>
 
     </div>
-    </article>`
-    };
+	</article>
+  
+		<!-- Unique content ended -->  
+		</section>`;
+		_redirectService.redirect();
+	}
+
 }
